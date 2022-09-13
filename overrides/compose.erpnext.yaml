@@ -1,5 +1,5 @@
 x-erpnext-backend-image: &erpnext_backend_image
-  image: frappe/erpnext-worker:${ERPNEXT_VERSION:?No ERPNext version set}
+  image: naderelabed/erpnext-worker:${ERPNEXT_VERSION:?No ERPNext version set}
 
 services:
   configurator:
@@ -9,7 +9,7 @@ services:
     <<: *erpnext_backend_image
 
   frontend:
-    image: frappe/erpnext-nginx:${ERPNEXT_VERSION}
+    image: naderelabed/erpnext-nginx:${ERPNEXT_VERSION}
 
   queue-short:
     <<: *erpnext_backend_image
