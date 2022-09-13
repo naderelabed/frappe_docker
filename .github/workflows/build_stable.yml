@@ -28,7 +28,7 @@ on:
       - docker-bake.hcl
       - example.env
 
-  # Triggered from frappe/frappe and frappe/erpnext on releases
+  # Triggered from naderelabed/frappe and naderelabed/erpnext on releases
   repository_dispatch:
 
   workflow_dispatch:
