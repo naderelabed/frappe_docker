@@ -2,7 +2,7 @@
 # Reference: https://github.com/docker/buildx/blob/master/docs/reference/buildx_bake.md
 
 variable "REGISTRY_USER" {
-    default = "frappe"
+    default = "naderelabed"
 }
 
 variable "FRAPPE_VERSION" {
@@ -14,15 +14,15 @@ variable "ERPNEXT_VERSION" {
 }
 
 variable "FRAPPE_REPO" {
-    default = "https://github.com/frappe/frappe"
+    default = "https://github.com/naderelabed/frappe"
 }
 
 variable "ERPNEXT_REPO" {
-    default = "https://github.com/frappe/erpnext"
+    default = "https://github.com/naderelabed/erpnext"
 }
 
 variable "BENCH_REPO" {
-    default = "https://github.com/frappe/bench"
+    default = "https://github.com/naderelabed/bench"
 }
 
 # Bench image
@@ -33,7 +33,7 @@ target "bench" {
     }
     context = "images/bench"
     target = "bench"
-    tags = ["frappe/bench:latest"]
+    tags = ["naderelabed/bench:latest"]
 }
 
 target "bench-test" {
@@ -73,6 +73,7 @@ target "default-args" {
         BENCH_REPO = "${BENCH_REPO}"
         FRAPPE_VERSION = "${FRAPPE_VERSION}"
         ERPNEXT_VERSION = "${ERPNEXT_VERSION}"
+        # If `ERPNEXT_VERSION` variable contains "v13" use Python 3.9. Else 3.10.
         PYTHON_VERSION = can(regex("v13", "${ERPNEXT_VERSION}")) ? "3.9" : "3.10"
     }
 }
