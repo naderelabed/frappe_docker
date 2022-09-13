@@ -1,6 +1,6 @@
 ARG FRAPPE_VERSION=version-14
 # Prepare builder image
-FROM frappe/bench:latest as assets
+FROM naderelabed/bench:latest as assets
 
 ARG FRAPPE_VERSION=version-14
 ARG ERPNEXT_VERSION=version-14
@@ -24,7 +24,7 @@ RUN bench build --production --verbose --hard-link
 
 
 # Use frappe-nginx image with nginx template and env vars
-FROM frappe/frappe-nginx:${FRAPPE_VERSION}
+FROM naderelabed/frappe-nginx:${FRAPPE_VERSION}
 
 # Remove existing assets
 USER root
