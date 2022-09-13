@@ -1,7 +1,7 @@
 FROM frappe/bench:latest as assets_builder
 
 ARG FRAPPE_VERSION
-ARG FRAPPE_REPO=https://github.com/frappe/frappe
+ARG FRAPPE_REPO=https://github.com/naderelabed/frappe
 RUN bench init --version=${FRAPPE_VERSION} --frappe-path=${FRAPPE_REPO} --skip-redis-config-generation --verbose --skip-assets /home/frappe/frappe-bench
 
 WORKDIR /home/frappe/frappe-bench
@@ -19,7 +19,7 @@ RUN bench setup requirements \
 FROM assets_builder as erpnext_assets
 
 ARG ERPNEXT_VERSION
-ARG ERPNEXT_REPO=https://github.com/frappe/erpnext
+ARG ERPNEXT_REPO=https://github.com/naderelabed/erpnext
 RUN bench get-app --branch=${ERPNEXT_VERSION} --skip-assets --resolve-deps erpnext ${ERPNEXT_REPO}\
     && if [ -z "${ERPNEXT_VERSION##*v14*}" ] || [ "$ERPNEXT_VERSION" = "develop" ]; then \
         export BUILD_OPTS="--production"; \
@@ -30,7 +30,7 @@ RUN bench get-app --branch=${ERPNEXT_VERSION} --skip-assets --resolve-deps erpne
 FROM alpine/git as bench
 
 # Error pages
-ARG BENCH_REPO=https://github.com/frappe/bench
+ARG BENCH_REPO=https://github.com/naderelabed/bench
 RUN git clone --depth 1 ${BENCH_REPO} /tmp/bench \
     && mkdir /out \
     && mv /tmp/bench/bench/config/templates/502.html /out \
