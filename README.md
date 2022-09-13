@@ -1,7 +1,7 @@
-[![Build Stable](https://github.com/frappe/frappe_docker/actions/workflows/build_stable.yml/badge.svg)](https://github.com/frappe/frappe_docker/actions/workflows/build_stable.yml)
-[![Build Develop](https://github.com/frappe/frappe_docker/actions/workflows/build_develop.yml/badge.svg)](https://github.com/frappe/frappe_docker/actions/workflows/build_develop.yml)
+[![Build Stable](https://github.com/naderelabed/frappe_docker/actions/workflows/build_stable.yml/badge.svg)](https://github.com/naderelabed/frappe_docker/actions/workflows/build_stable.yml)
+[![Build Develop](https://github.com/naderelabed/frappe_docker/actions/workflows/build_develop.yml/badge.svg)](https://github.com/naderelabed/frappe_docker/actions/workflows/build_develop.yml)
 
-Everything about [Frappe](https://github.com/frappe/frappe) and [ERPNext](https://github.com/frappe/erpnext) in containers.
+Everything about [Frappe](https://github.com/naderelabed/frappe) and [ERPNext](https://github.com/naderelabed/erpnext) in containers.
 
 # Getting Started
 
@@ -15,7 +15,7 @@ cd frappe_docker
 
 ### Try in Play With Docker
 
-<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/frappe/frappe_docker/main/pwd.yml">
+<a href="https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/naderelabed/frappe_docker/main/pwd.yml">
   <img src="https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png" alt="Try in PWD"/>
 </a>
 
@@ -23,7 +23,7 @@ Wait for 5 minutes for ERPNext site to be created or check `create-site` contain
 
 # Development
 
-We have baseline for developing in VSCode devcontainer with [frappe/bench](https://github.com/frappe/bench). [Start development](development).
+We have baseline for developing in VSCode devcontainer with [frappe/bench](https://github.com/naderelabed/bench). [Start development](development).
 
 # Production
 
@@ -55,6 +55,6 @@ If you want to contribute to this repo refer to [CONTRIBUTING.md](CONTRIBUTING.m
 
 This repository is only for Docker related stuff. You also might want to contribute to:
 
-- [Frappe framework](https://github.com/frappe/frappe#contributing),
-- [ERPNext](https://github.com/frappe/erpnext#contributing),
-- or [Frappe Bench](https://github.com/frappe/bench).
+- [Frappe framework](https://github.com/naderelabed/frappe#contributing),
+- [ERPNext](https://github.com/naderelabed/erpnext#contributing),
+- or [Frappe Bench](https://github.com/naderelabed/bench).
